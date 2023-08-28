@@ -1,0 +1,19 @@
+const axios = require('axios');
+
+const options = {
+  method: 'GET',
+  url: 'https://api.themoviedb.org/3/trending/movie/day?language=en-US',
+  headers: {
+    accept: 'application/json',
+    Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1ZDA4NjM2YWYzMGQxNTBkMGE5NmIzMjE1OTdiMWNlNSIsInN1YiI6IjY0Y2E5YmY0NGZkMTQxMDE0NmI2ZjM0MSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.lmuo2Ypuwny348HuOMHW19c_y2L8Zs2SikAM02_RID4'
+  }
+};
+
+axios
+  .request(options)
+  .then(function (response) {
+    console.log(response.data);
+  })
+  .catch(function (error) {
+    console.error(error);
+  });
